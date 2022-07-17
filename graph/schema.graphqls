@@ -1,0 +1,25 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type Dog {
+  _id: String!
+  name: String!
+}
+
+type Query {
+  dog(_id:String!): Dog!
+  dogs:[Dog!]!
+}
+
+input NewDog {
+  name: String!
+}
+
+type Mutation {
+  createDog(input: NewDog!): Dog!
+}
+
+type Subscription {
+  dogCreated: Dog!
+}
